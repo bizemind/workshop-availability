@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<title>Slot | Creatis</title>
+<title>Slot Workshop Availability at Creatis</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -94,7 +94,7 @@ body{
 
   <div class="header">
     <h1>Slot</h1>
-    <span>by Creatis</span>
+    <span>Workshop Availability at Creatis</span>
   </div>
 
   <div class="filter-card">
@@ -133,13 +133,19 @@ const fullHolidays = {
   "2026-11-10":"Diwali",
   "2026-11-11":"Bhai Duj"
 };
-for (let d = 1; d <= 30; d++) {
+// June 7–30: fully closed
+for (let d = 7; d <= 30; d++) {
   fullHolidays[`2026-06-${String(d).padStart(2,"0")}`] = "Summer Hours";
 }
 
 const partialDayHolidays = {"2026-03-03":"Holi"};
-for (let d = 1; d <= 31; d++) {
+// May 1–9: both slots open; May 10–31: 11 AM only
+for (let d = 10; d <= 31; d++) {
   partialDayHolidays[`2026-05-${String(d).padStart(2,"0")}`] = "Summer Hours";
+}
+// June 1–6: 11 AM only
+for (let d = 1; d <= 6; d++) {
+  partialDayHolidays[`2026-06-${String(d).padStart(2,"0")}`] = "Summer Hours";
 }
 
 const soldOutSlots = [
